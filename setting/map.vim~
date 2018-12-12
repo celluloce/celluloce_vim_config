@@ -1,0 +1,37 @@
+
+" 括弧打った時自動で左に移動する
+inoremap { {}<Left><CR><ESC><S-o>
+inoremap } {}<Left>
+inoremap [ []<Left>
+" jを2回打つと、挿入モード解除
+inoremap kl <ESC>
+" Ctrl-oで保存
+inoremap <C-o> <ESC>:w<CR>
+" 入力中でも動けるで
+inoremap <C-K> <ESC>lwi
+inoremap <C-J> <ESC>lbi
+
+" @を打つと横にterminal起動
+noremap <C-@> :vs<CR>:ter<CR><C-w><C-w>:q<CR>
+" Alt + 矢印 でwindow切り替え
+nnoremap <silent> <A-Up> :wincmd k<CR>
+nnoremap <silent> <A-Down> :wincmd j<CR>
+nnoremap <silent> <A-Left> :wincmd h<CR>
+nnoremap <silent> <A-Right> :wincmd l<CR>
+nnoremap <silent> <A-W> :wincmd w<CR>
+
+" terminalでlogを見たい時
+noremap <C-\><C-\> <C-\><C-n>
+
+
+" Clipboald
+set clipboard=unnamed,autoselect
+vmap <C-c> "+y
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
+
+" Plug
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
